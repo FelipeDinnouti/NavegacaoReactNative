@@ -55,3 +55,5 @@ const styles = StyleSheet.create({
         fontWeight: '300'
     }   
 })
+
+// Felipe Dinnouti

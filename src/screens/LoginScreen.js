@@ -120,3 +120,5 @@ const styles = StyleSheet.create({
       height: 6
     }
 })
+
+// Felipe Dinnouti
