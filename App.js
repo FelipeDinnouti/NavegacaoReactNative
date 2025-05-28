@@ -10,6 +10,7 @@ import HomeScreen from './src/screens/HomeScreen.js';
 import DetailsScreen from './src/screens/DetailsScreen.js';
 import ProfileScreen from './src/screens/ProfileScreen.js';
 import LoginScreen from './src/screens/LoginScreen.js';
+import RegisterScreen from './src/screens/RegisterScreen.js';
 
 import * as SecureStore  from 'expo-secure-store';
 
@@ -57,6 +58,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName={initialRoute}>
         <Stack.Screen name="Login" component={LoginScreen} options = {{ headerShown: false }} initialParams={ setLoggedIn }/>
+        <Stack.Screen name="Register" component={RegisterScreen} options = {{ headerShown: false }}/>
         <Stack.Screen name="Home" component={HomeScreen} options ={{ headerShown: false }} />
         <Stack.Screen name="Details" component={DetailsScreen} options ={{ headerShown: false }} />
         <Stack.Screen name="Profile" component={ProfileScreen} options ={{ headerShown: false }} initialParams={{ setLoggedIn }}/>

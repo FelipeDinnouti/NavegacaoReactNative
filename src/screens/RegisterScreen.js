@@ -14,23 +14,23 @@ export default function LoginScreen({ navigation }) {
 // Declaração das variáveis de estado
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
+    const [password_confirm, setPasswordConfirm] = useState('');
+
     const [errorMessage, setErrorMessage] = useState('');
 
-    const setLoginStorage = async (value) => {
-    try { 
-      await SecureStore.setItemAsync('is_logged_in', value.toString());
+    const createUserEntry = async (input_username, input_password) => {
+    try {
+        await SecureStore.setItemAsync('registered_user', JSON.stringify({username: input_username, password: input_password})); 
     } catch (error) {
-      console.error('Erro ao salvar o login', error);
+        console.error('Erro ao efetuar cadastro', error);
     }
   };
 
-    function verifyLogin() {
-        if (login !== "admin" || password !== "123") { 
-            Alert.alert("Login errado", "usuario padrão: admin  senha: 123")
+    function register() {
+        if (password !== password_confirm) { 
+            Alert.alert("Senhas não coincidem")
             return
          }
-
-        console.log("Passou");
 
         setLoginStorage(true).catch(error => 
             console.error('Unhandled error:', error)
@@ -46,7 +46,7 @@ export default function LoginScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <OverlappingText text="Placeholder Inc."/>
-            <Text style={styles.subtitle}>LOGIN</Text>            
+            <Text style={styles.subtitle}>Cadastro</Text>            
 
             <TextInput
                 style={styles.input}
@@ -66,11 +66,16 @@ export default function LoginScreen({ navigation }) {
                 value={password}
                 onChangeText={setPassword}
             />
-            <CustomButton text="LOGAR" container_style={styles.buttonContainer} text_style={styles.buttonText} onPress={verifyLogin}/>
-            <Pressable onPress={() => {navigation.navigate('Register')}}>
-                <Text style={styles.register_text}>Não tenho cadastro</Text>
-            </Pressable>
-            
+            <TextInput
+                style={styles.input}
+                placeholderTextColor={"#91a0d9"}
+                placeholder="Confirme a Senha"
+                keyboardType="text"
+                secureTextEntry={true}
+                value={password_confirm}
+                onChangeText={setPasswordConfirm}
+            />
+            <CustomButton text="CADASTRO" container_style={styles.buttonContainer} text_style={styles.buttonText} onPress={register}/>
         </View>
     );
 }
@@ -119,12 +124,6 @@ const styles = StyleSheet.create({
     icon: {
       width: 6,
       height: 6
-    },
-    register_text: {
-        fontWeight: '300',
-        fontStyle: "italic",
-        color: "#5aa6ff",
-        fontSize: 12
     }
 })
 
