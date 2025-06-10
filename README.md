@@ -1,20 +1,21 @@
-## Visão Geral
+## Overview
 
-Esse app tem como objetivo demonstrar de forma simples a navegação entre telas com stack usando React Native e o Framework Expo.
-O aplicativo consiste em quatro telas:
-- Perfil 
+This app has the goal to demonstrate in a simple way how navigation between screens using stack navigation works in React Native, using the Expo Framework.
+The app consists in four screens:
+- Profile
 - Home
-- Detalhes
+- Details
 - Login
 
-A tela de login é onde o usuário pode 
-As telas Home e Detalhes não contém informação real mas tem botões para acessar as outras telas.
-Na tela de Perfil é possível desfazer o login.
+The login screen is where the user may insert the default register data (login: admin  password: 123)
+Home and Details have no real information and exist only as an example.
+In the profile screen the user may logout.
 
-## Instruções para uso do projeto
+## Instructions on running the project
 
-É necessário que o [NodeJS](https://nodejs.org/en) esteja instalado na máquina, assim como o Git.
-Para clonar o repositório: 
+[NodeJS](https://nodejs.org/en) and git are required to be installed in the machine.
+
+Cloning the repo:
 
 ```bash
 git clone https://github.com/FelipeDinnouti/NavegacaoReactNative
@@ -39,4 +40,4 @@ npx expo start --tunnel // Tunnel is optional but required if you are not in the
 ---
 
 
-*feito com muito empenho por Felipe Dinnouti*
+*made with recebill by Felipe Dinnouti*
