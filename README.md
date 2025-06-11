@@ -6,8 +6,10 @@ The app consists in four screens:
 - Home
 - Details
 - Login
+- Register
 
 The login screen is where the user may insert the default register data (login: admin  password: 123)
+In the register screen you can setup a new default user (can only have one registered data at a time besides the default admin login.)
 Home and Details have no real information and exist only as an example.
 In the profile screen the user may logout.
 

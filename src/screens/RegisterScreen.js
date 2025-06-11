@@ -28,25 +28,25 @@ export default function LoginScreen({ navigation }) {
 
     function register() {
         if (password !== password_confirm) { 
-            Alert.alert("Senhas não coincidem")
+            Alert.alert("Passwords don't match")
             return
          }
 
-        setLoginStorage(true).catch(error => 
+         createUserEntry(login, password).catch(error => 
             console.error('Unhandled error:', error)
           );
 
         // usuário nao pode voltar para tela inicial
         navigation.reset({
             index: 0,
-            routes: [{name: 'Home'}],
-          })
+            routes: [{name: 'Login'}],
+        })
     }
 
     return (
         <View style={styles.container}>
             <OverlappingText text="Placeholder Inc."/>
-            <Text style={styles.subtitle}>Cadastro</Text>            
+            <Text style={styles.subtitle}>Register</Text>            
 
             <TextInput
                 style={styles.input}

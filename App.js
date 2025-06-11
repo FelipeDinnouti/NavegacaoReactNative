@@ -42,7 +42,7 @@ export default function App() {
   };
 
   initializeApp();
-}, []); // Empty dependency array = runs only once on mount
+  }, []); // Empty dependency array = runs only once on mount
   
   if (!isReady) {
     return (
