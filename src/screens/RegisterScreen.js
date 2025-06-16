@@ -11,7 +11,7 @@ const windowWidth = Dimensions.get('window').width;
 
 export default function LoginScreen({ navigation }) {
     
-// Declaração das variáveis de estado
+    // Declaring State variables
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [password_confirm, setPasswordConfirm] = useState('');
@@ -36,7 +36,7 @@ export default function LoginScreen({ navigation }) {
             console.error('Unhandled error:', error)
           );
 
-        // usuário nao pode voltar para tela inicial
+        // User can't go back to main screen
         navigation.reset({
             index: 0,
             routes: [{name: 'Login'}],
