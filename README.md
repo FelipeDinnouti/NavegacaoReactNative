@@ -1,7 +1,7 @@
 ## Overview
 
 This app has the goal to demonstrate in a simple way how navigation between screens using stack navigation works in React Native, using the Expo Framework.
-The app consists in four screens:
+The app consists in five screens:
 - Profile
 - Home
 - Details
